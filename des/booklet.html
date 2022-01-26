@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- UK CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.10/dist/css/uikit.min.css" />
+
+    <!-- UK JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.10/dist/js/uikit-icons.min.js"></script>
+
+    <!-- vue2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- JS -->
+    <script src="../js/add.js"></script>
+    <style>
+        .title1 {
+            color: burlywood;
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <script>
+            PageHeader();
+        </script>
+        <div class="container-fluid p-5">
+            <div class="row pb-2">
+                <div class="col-2">
+                    <a href="../index.html"><img src="../image/index/logo.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <p class="h5 border-bottom brd border-secondary py-2">設計</p>
+                    <div v-for="(des,index) in desList" :key="des.id">
+                        <a :href="des.href"> {{des.text}} </a>
+                    </div>
+                    <p class="h5 border-bottom brd border-secondary py-2">UI/UX</p>
+                    <div v-for="(ui,index) in uiList" :key="ui.id">
+                        <a :href="ui.href"> {{ui.text}} </a>
+                    </div>
+                    <p class="h5 border-bottom brd border-secondary py-2">網頁架設</p>
+                    <div v-for="(web,index) in web" :key="web.id">
+                        <a :href="web.href"> {{web.text}} </a>
+                    </div>
+                    <p class="h5 border-bottom brd border-secondary py-2">影片</p>
+                    <div v-for="(mv,index) in mvList" :key="mv.id">
+                        <a :href="mv.href"> {{mv.text}} </a>
+                    </div>
+                    <p></p>
+                    <a href="../price/price.html" class="h5 py-2 text-info"> 價目表 </a>
+                </div>
+                <div class="col-9">
+                    <p class="title1">小冊子</p>
+                    <div uk-lightbox class="row">
+                        <a :href="item.href" class="col-6 col-lg-4 p-1" v-for="(item,index) in titleList" :key="item.id">
+                            <img class="" :src="item.img" alt="">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                desList: [{
+                    text: 'LOGO',
+                    href: '../des/logo.html',
+                }, {
+                    text: '名片',
+                    href: '../des/card.html',
+                }, {
+                    text: '菜單 MENU',
+                    href: '../des/menu.html',
+                }, {
+                    text: '蝦皮 商城主圖',
+                    href: '../des/shrimp.html',
+                }, {
+                    text: '網頁 產品介紹頁EDM',
+                    href: '../des/edm.html',
+                }, {
+                    text: '廣告橫幅 Banner',
+                    href: '../des/banner.html',
+                }, {
+                    text: '廣告招牌',
+                    href: '../des/sign.html',
+                }, {
+                    text: 'FB、貼文圖',
+                    href: '../des/fb.html',
+                }, {
+                    text: '封面設計',
+                    href: '../des/cover.html',
+                }, {
+                    text: '產品包裝',
+                    href: '../des/package.html',
+                }, {
+                    text: '簡歷',
+                    href: '../des/cv.html',
+                }, {
+                    text: '證書',
+                    href: '../des/certificate.html',
+                }, {
+                    text: '小冊子',
+                    href: '../des/booklet.html',
+                }, ],
+                uiList: [{
+                    text: '電腦PC裝置',
+                    href: '../ui/uip.html',
+                }, {
+                    text: '手機移動裝置',
+                    href: '../ui/uim.html',
+                }, {
+                    text: '購物網站',
+                    href: '../ui/uip.html',
+                }, {
+                    text: '後台管理UI',
+                    href: '../ui/uib.html',
+                }, ],
+                web: [{
+                    text: '品牌一頁式瀏覽',
+                    href: '../web/web.html',
+                }, {
+                    text: '簡易網站',
+                    href: '../web/web.html',
+                }, {
+                    // backend
+                    text: '購物網站',
+                    href: '../web/web.html',
+                }, ],
+                mvList: [{
+                    text: '片頭 片尾',
+                    href: '../mv/mv.html',
+                }, {
+                    text: '特效',
+                    href: '../mv/mv.html',
+                }, {
+                    text: '綜藝字',
+                    href: '../mv/mv.html',
+                }, ],
+                titleList: [{
+                    img: '../image/DES/小冊子/1.jpg',
+                    href: '../image/DES/小冊子/1-1.png',
+                }, {
+                    img: '../image/DES/小冊子/2.jpg',
+                    href: '../image/DES/小冊子/2-1.png',
+                }, {
+                    img: '../image/DES/小冊子/3.jpg',
+                    href: '../image/DES/小冊子/3-1.png',
+                }, {
+                    img: '../image/DES/小冊子/4.jpg',
+                    href: '../image/DES/小冊子/4-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/5.jpg',
+                    href: '../image/DES/小冊子/5-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/6.jpg',
+                    href: '../image/DES/小冊子/6-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/7.jpg',
+                    href: '../image/DES/小冊子/7-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/8.jpg',
+                    href: '../image/DES/小冊子/8-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/9.jpg',
+                    href: '../image/DES/小冊子/9-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/10.jpg',
+                    href: '../image/DES/小冊子/10-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/11.jpg',
+                    href: '../image/DES/小冊子/11-1.jpg',
+                }, {
+                    img: '../image/DES/小冊子/12.jpg',
+                    href: '../image/DES/小冊子/12-1.jpg',
+                }, ],
+            }
+        })
+    </script>
+
+    <!-- JQ -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</body>
+
+</html>
