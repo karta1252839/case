@@ -37,44 +37,6 @@
         <script>
             PageHeader();
         </script>
-        <div class="container-fluid p-5">
-            <div class="row pb-2">
-                <div class="col-2">
-                    <a href="../index.html"><img src="../image/index/logo.jpg" alt=""></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3">
-                    <p class="h5 border-bottom brd border-secondary py-2">設計</p>
-                    <div v-for="(des,index) in desList" :key="des.id">
-                        <a :href="des.href"> {{des.text}} </a>
-                    </div>
-                    <p class="h5 border-bottom brd border-secondary py-2">UI/UX</p>
-                    <div v-for="(ui,index) in uiList" :key="ui.id">
-                        <a :href="ui.href"> {{ui.text}} </a>
-                    </div>
-                    <p class="h5 border-bottom brd border-secondary py-2">網頁架設</p>
-                    <div v-for="(web,index) in web" :key="web.id">
-                        <a :href="web.href"> {{web.text}} </a>
-                    </div>
-                    <p class="h5 border-bottom brd border-secondary py-2">影片</p>
-                    <div v-for="(mv,index) in mvList" :key="mv.id">
-                        <a :href="mv.href"> {{mv.text}} </a>
-                    </div>
-                    <p></p>
-                    <a href="../price/price.html" class="h5 py-2 text-info"> 價目表 </a>
-                </div>
-                <div class="col-9">
-                    <p class="title1">產品包裝</p>
-                    <div uk-lightbox class="row">
-                        <a :href="item.href" class="col-6 col-lg-4 p-1" v-for="(item,index) in titleList" :key="item.id">
-                            <img class="" :src="item.img" alt="">
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
 
     <script>
